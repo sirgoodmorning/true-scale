@@ -47,8 +47,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(container)
 
         supportActionBar?.apply {
-            title = "True Scale"
-            subtitle = "AR Measurement Tool"
+            title = getString(R.string.app_name)
+            subtitle = "AR测量工具"
         }
 
         checkCameraPermission()
@@ -125,12 +125,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun showPermissionRationale() {
         MaterialAlertDialogBuilder(this)
-            .setTitle("Camera Permission Required")
-            .setMessage("True Scale needs camera access to measure distances using Augmented Reality.")
-            .setPositiveButton("Grant Permission") { _, _ ->
+            .setTitle(getString(R.string.dialog_title_camera_permission))
+            .setMessage(getString(R.string.dialog_message_camera_required))
+            .setPositiveButton("授予权限") { _, _ ->
                 permissionLauncher.launch(CAMERA_PERMISSION)
             }
-            .setNegativeButton("Exit App") { _, _ ->
+            .setNegativeButton("退出应用") { _, _ ->
                 finish()
             }
             .setCancelable(false)
@@ -139,9 +139,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun showPermissionDeniedDialog() {
         MaterialAlertDialogBuilder(this)
-            .setTitle("Camera Permission Required")
-            .setMessage("True Scale cannot function without camera access. Please enable camera permission in your device settings.")
-            .setPositiveButton("Exit App") { _, _ ->
+            .setTitle(getString(R.string.dialog_title_camera_permission))
+            .setMessage(getString(R.string.dialog_message_camera_denied))
+            .setPositiveButton("退出应用") { _, _ ->
                 finish()
             }
             .setCancelable(false)
@@ -150,9 +150,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun showArCoreError(message: String) {
         MaterialAlertDialogBuilder(this)
-            .setTitle("AR Not Available")
+            .setTitle(getString(R.string.dialog_title_ar_not_available))
             .setMessage(message)
-            .setPositiveButton("Exit App") { _, _ ->
+            .setPositiveButton("退出应用") { _, _ ->
                 finish()
             }
             .setCancelable(false)
