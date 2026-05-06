@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:background="#80000000"
             android:padding="16dp"
-            android:text="Tap to measure"
+            android:text="@string/tap_to_measure"
             android:textColor="@android:color/white"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -47,7 +47,7 @@
             android:layout_marginTop="8dp"
             android:background="#80000000"
             android:padding="12dp"
-            android:text="Move device to find surfaces"
+            android:text="@string/instruction_initializing"
             android:textAlignment="center"
             android:textColor="@android:color/white"
             android:textSize="16sp" />
@@ -75,7 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginEnd="8dp"
-            android:text="Distance"
+            android:text="@string/mode_distance"
             android:textSize="14sp" />
 
         <!-- Clear Button -->
@@ -109,7 +109,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginStart="8dp"
-            android:text="Metric"
+            android:text="@string/metric"
             android:textSize="14sp" />
 
     </LinearLayout>
