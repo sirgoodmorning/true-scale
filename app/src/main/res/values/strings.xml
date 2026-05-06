@@ -1,40 +1,39 @@
 <resources>
-    <string name="app_name">True Scale</string>
+    <string name="app_name">真实测量</string>
 
     <!-- Measurement Fragment UI -->
-    <string name="tap_to_measure">Tap to measure</string>
-    <string name="metric">Metric</string>
-    <string name="imperial">Imperial</string>
+    <string name="tap_to_measure">点击开始测量</string>
+    <string name="metric">公制</string>
+    <string name="imperial">英制</string>
 
     <!-- Instructions -->
-    <string name="instruction_initializing">Initializing AR…</string>
-    <string name="instruction_move_slowly">Move device slowly to improve tracking</string>
-    <string name="instruction_tracking_stopped">AR tracking stopped - point at surfaces</string>
-    <string name="instruction_tap_first_point">Tap to place first point</string>
-    <string name="instruction_tap_second_point">Tap to place second point</string>
-    <string name="instruction_distance">Tap two points to measure distance</string>
-    <string name="instruction_height">Tap bottom then top to measure height</string>
-    <string name="instruction_area">Tap opposite corners to measure area</string>
-    <string name="instruction_volume">Tap opposite corners to measure volume</string>
+    <string name="instruction_initializing">正在初始化AR…</string>
+    <string name="instruction_move_slowly">请缓慢移动设备以提升追踪精度</string>
+    <string name="instruction_tracking_stopped">AR追踪已暂停 - 请将摄像头对准平面</string>
+    <string name="instruction_tap_first_point">点击放置第一个点</string>
+    <string name="instruction_tap_second_point">点击放置第二个点</string>
+    <string name="instruction_distance">点击两点以测量距离</string>
+    <string name="instruction_height">点击底部再点击顶部以测量高度</string>
+    <string name="instruction_area">点击对角以测量面积</string>
+    <string name="instruction_volume">点击对角以测量体积</string>
 
     <!-- Snackbars / Toasts -->
-    <string name="snackbar_wait_tracking">Wait for AR tracking to stabilize</string>
-    <string name="snackbar_low_quality">Low tracking quality - try again</string>
-    <string name="snackbar_measurement_complete">Measurement completed!</string>
-    <string name="snackbar_first_point">First point placed - tap for second point</string>
-    <string name="snackbar_no_surface">No surface detected - point at floor or table</string>
-    <string name="snackbar_measurement_failed">Measurement failed - try again</string>
-    <string name="snackbar_ar_ready">AR ready - scan surfaces to begin</string>
-    <string name="snackbar_measurements_cleared">Measurements cleared</string>
+    <string name="snackbar_wait_tracking">请等待AR追踪稳定</string>
+    <string name="snackbar_low_quality">追踪质量不佳 - 请重试</string>
+    <string name="snackbar_measurement_complete">测量已完成！</string>
+    <string name="snackbar_first_point">第一个点已放置 - 请点击放置第二个点</string>
+    <string name="snackbar_no_surface">未检测到平面 - 请对准地板或桌面</string>
+    <string name="snackbar_measurement_failed">测量失败 - 请重试</string>
+    <string name="snackbar_ar_ready">AR已就绪 - 扫描平面以开始</string>
+    <string name="snackbar_measurements_cleared">已清空所有测量数据</string>
 
     <!-- Error Messages -->
-    <string name="error_arcore_not_installed">ARCore not installed. Please install from Play Store.</string>
-    <string name="error_arcore_update_needed">ARCore needs update. Please update from Play Store.</string>
-    <string name="error_sdk_too_old">Android version too old for ARCore.</string>
-    <string name="error_device_not_compatible">Device not compatible with ARCore.</string>
-    <string name="error_ar_init_failed">AR initialization failed</string>
-    <string name="error_camera_permission_required">Camera permission required for AR. Exiting.</string>
-    <string name="error_camera_not_available">Camera not available. Exiting.</string>
-    <string name="error_storage_permission_required">Storage permission is required to save screenshots.</string>
-
+    <string name="error_arcore_not_installed">未安装ARCore服务，请从应用商店安装。</string>
+    <string name="error_arcore_update_needed">ARCore需要更新，请从应用商店更新。</string>
+    <string name="error_sdk_too_old">Android版本过低，不支持ARCore。</string>
+    <string name="error_device_not_compatible">此设备不兼容ARCore。</string>
+    <string name="error_ar_init_failed">AR初始化失败</string>
+    <string name="error_camera_permission_required">需要相机权限以使用AR功能，即将退出。</string>
+    <string name="error_camera_not_available">相机不可用，即将退出。</string>
+    <string name="error_storage_permission_required">需要存储权限以保存截图。</string>
 </resources>
