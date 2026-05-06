@@ -159,7 +159,12 @@ class MeasurementFragment : Fragment() {
         })
 
         viewModel.measurementMode.observe(viewLifecycleOwner, Observer { mode ->
-            modeButton.text = mode.name.lowercase().replaceFirstChar { it.uppercase() }
+            modeButton.text = when (mode) {
+                MeasurementViewModel.MeasurementMode.DISTANCE -> getString(R.string.mode_distance)
+                MeasurementViewModel.MeasurementMode.HEIGHT -> getString(R.string.mode_height)
+                MeasurementViewModel.MeasurementMode.AREA -> getString(R.string.mode_area)
+                MeasurementViewModel.MeasurementMode.VOLUME -> getString(R.string.mode_volume)
+            }
             updateInstructions(mode)
         })
 
@@ -191,10 +196,10 @@ class MeasurementFragment : Fragment() {
         val trackingState = frame?.camera?.trackingState
         
         val instruction = when {
-            trackingState == TrackingState.PAUSED -> "Move device slowly to improve tracking"
-            trackingState == TrackingState.STOPPED -> "Point at surfaces to detect planes"
+            trackingState == TrackingState.PAUSED -> getString(R.string.instruction_move_slowly)
+            trackingState == TrackingState.STOPPED -> getString(R.string.instruction_point_at_surface)
             trackingState == TrackingState.TRACKING -> getString(instructionResId)
-            else -> "Initializing AR..."
+            else -> getString(R.string.instruction_initializing)
         }
         instructionText.text = instruction
         compassView.update(compassManager.headingFlow.replayCache.lastOrNull() ?: 0f, getCameraPitchDegrees())
@@ -252,7 +257,7 @@ class MeasurementFragment : Fragment() {
                 val validHit = result.hit!!
                 val confidence = manager.calculateMeasurementConfidence(frame, validHit)
                 if (confidence < 0.3f) {
-                    showSnackbar("Low tracking quality - try moving closer or improving lighting")
+                    showSnackbar(getString(R.string.snackbar_low_tracking_quality))
                     return
                 }
 
@@ -396,12 +401,12 @@ class MeasurementFragment : Fragment() {
         val activity = activity ?: return
         if (ActivityCompat.shouldShowRequestPermissionRationale(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
             AlertDialog.Builder(requireContext())
-                .setTitle("Storage Permission Required")
-                .setMessage("This app needs storage access to save measurement screenshots to your gallery.")
-                .setPositiveButton("OK") { _, _ ->
+                .setTitle(getString(R.string.dialog_title_storage_permission))
+                .setMessage(getString(R.string.dialog_message_storage_required))
+                .setPositiveButton("确定") { _, _ ->
                     ActivityCompat.requestPermissions(activity, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), STORAGE_PERMISSION_CODE)
                 }
-                .setNegativeButton("Cancel") { dialog, _ ->
+                .setNegativeButton("取消") { dialog, _ ->
                     dialog.dismiss()
                     showError(getString(R.string.error_storage_permission_required))
                 }
@@ -523,11 +528,11 @@ class MeasurementFragment : Fragment() {
                 outputStream?.let {
                     bitmap.compress(Bitmap.CompressFormat.JPEG, 100, it)
                     it.close()
-                    showSnackbar("Screenshot saved to gallery")
+                    showSnackbar(getString(R.string.snackbar_screenshot_saved))
                 }
             }
         } catch (e: Exception) {
-            showError("Failed to save screenshot: ${e.message}")
+            showError(getString(R.string.error_save_screenshot, e.message))
         }
     }
 
@@ -567,7 +572,7 @@ class MeasurementFragment : Fragment() {
             showError(getString(R.string.error_camera_not_available))
             activity?.finish()
         } catch (e: Exception) {
-            showError("Error resuming AR session: ${e.message}")
+            showError(getString(R.string.error_resume_ar, e.message))
         }
     }
 
