@@ -36,4 +36,28 @@
     <string name="error_camera_permission_required">需要相机权限以使用AR功能，即将退出。</string>
     <string name="error_camera_not_available">相机不可用，即将退出。</string>
     <string name="error_storage_permission_required">需要存储权限以保存截图。</string>
+
+    <!-- Dialog Titles -->
+    <string name="dialog_title_camera_permission">需要相机权限</string>
+    <string name="dialog_title_storage_permission">需要存储权限</string>
+    <string name="dialog_title_ar_not_available">AR不可用</string>
+    <string name="dialog_title_exit_app">退出应用</string>
+
+    <!-- Dialog Messages -->
+    <string name="dialog_message_camera_required">真实测量应用需要相机权限才能使用增强现实测量功能。</string>
+    <string name="dialog_message_camera_denied">真实测量应用无法在没有相机权限的情况下运行。请在设备设置中启用相机权限。</string>
+    <string name="dialog_message_storage_required">此应用需要存储访问权限以将测量截图保存到相册。</string>
+
+    <!-- Measurement Modes -->
+    <string name="mode_distance">距离</string>
+    <string name="mode_height">高度</string>
+    <string name="mode_area">面积</string>
+    <string name="mode_volume">体积</string>
+
+    <!-- Additional Messages -->
+    <string name="instruction_point_at_surface">请将摄像头对准平面以检测</string>
+    <string name="snackbar_low_tracking_quality">追踪质量不佳 - 请靠近目标或改善照明条件</string>
+    <string name="snackbar_screenshot_saved">截图已保存到相册</string>
+    <string name="error_save_screenshot">保存截图失败: %s</string>
+    <string name="error_resume_ar">恢复AR会话失败: %s</string>
 </resources>
